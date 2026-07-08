@@ -1,31 +1,69 @@
 ﻿# REFLECTION.md -- Assignment 2
 
-## Structural differences
+## 1. Structural Differences (Manual vs AI)
 
-| Aspect | Manual Version | AI Version |
-|--------|---------------|------------|
-| Python Libraries | sklearn, matplotlib | sklearn, matplotlib (same core libs) |
-| R Libraries | base R plot() | ggplot2 (grammar of graphics) |
-| Python formatting | f-strings (f"Slope: {x:.4f}") | % formatting ("Slope: %.4f" % x) |
-| Plot colors | Basic blue/red | steelblue/crimson |
-| Plot style | Simple matplotlib | seaborn theme applied |
-| CLI argument handling | sys.argv | sys.argv (same approach) |
-| Notebook cell grouping | 5 logical cells | 5 logical cells (same structure) |
+### Python Notebook
+| Aspect | Manual | AI |
+|--------|--------|----|
+| Libraries | sklearn + matplotlib | sklearn + matplotlib |
+| String formatting | f-strings (modern) | % formatting (old style) |
+| Plot style | Basic matplotlib | seaborn-enhanced |
 
-The biggest structural difference is in the R notebook: the AI chose ggplot2, a modern declarative plotting system, while the manual version used base R plot() functions.
+### R Notebook
+| Aspect | Manual | AI |
+|--------|--------|----|
+| Plotting package | base R plot() | ggplot2 |
+| Syntax | Imperative | Declarative (grammar of graphics) |
 
-## Readability
+### CLI Scripts
+| Aspect | Manual | AI |
+|--------|--------|----|
+| Argument parsing | sys.argv | sys.argv |
+| Output format | Identical | Identical |
+| Plot behavior | Identical | Identical |
 
-The manual version is more straightforward and easier for a beginner to follow. The AI version's use of ggplot2 in R is more elegant once you understand the grammar of graphics, but requires knowledge of an additional package. For a scientist who needs quick exploratory analysis, the manual version wins on simplicity. The AI version wins on visual polish.
+**Key takeaway:** Both versions produce the same numerical results. The main structural difference is that the AI used modern R packages (ggplot2) while the manual version used base R.
 
-## AI bugs and omissions
+---
 
-The AI did not hallucinate any nonexistent packages or wrong version numbers, which was good. However, two issues appeared in the initial AI output that needed fixing:
-- The AI used %% instead of % for Python string formatting, which caused a syntax error
-- The AI's notebook had each character of code in a separate cell (technical formatting issue)
+## 2. Readability
 
-These were fixed during iteration. The AI also used slightly different plot colors and styles, but those are preferences, not bugs.
+- **Manual version**: More straightforward. Code follows a simple linear flow. Easier for beginners to understand.
+- **AI version**: More elegant visually (ggplot2, seaborn styling). But requires familiarity with additional packages.
 
-## CLI behavior
+**Verdict:** Manual wins for clarity; AI wins for visual polish.
 
-Both CLI scripts behave identically -- they accept <filename> <x_column> <y_column> as command-line arguments, output slope/intercept/R-squared, and save a PNG plot. The argument order and error messages are consistent between the manual and AI versions.
+---
+
+## 3. AI Bugs & Omissions
+
+| Issue | Found | Fixed? |
+|-------|-------|--------|
+| Hallucinated packages | None | N/A |
+| Wrong version numbers | None | N/A |
+| %% instead of % in Python | Yes | Fixed |
+| Notebook source formatting | Yes (characters as cells) | Fixed |
+
+**The AI code ran correctly after minor fixes.** No hallucinated packages or versions.
+
+---
+
+## 4. CLI Behavior
+
+Both CLIs behave identically:
+```
+python linear_regression_python.py <filename> <x_col> <y_col>
+Rscript linear_regression_r.R <filename> <x_col> <y_col>
+```
+- Same argument order
+- Same output format (slope, intercept, R-squared)
+- Same output filename convention
+- Error messages for missing arguments are reasonable in both
+
+---
+
+## 5. Tools Used
+
+- **AI tool**: Cursor (GPT-4o / Claude)
+- **Prompts**: See ai/PROMPTS.md
+- **Manual**: All code typed by hand, no AI assistance
