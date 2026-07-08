@@ -17,3 +17,8 @@ This project demonstrates linear regression analysis using Python and R Jupyter 
 ## Results
 - Slope: 2.38, Intercept: 5.13
 - R-squared: 0.9372
+
+## Notes
+- CLI scripts and data are in the manual/ folder
+- Run from project root: python manual/linear_regression_python.py manual/regression_data.csv x y
+- R version: Rscript manual/linear_regression_r.R manual/regression_data.csv x y
