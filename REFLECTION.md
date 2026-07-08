@@ -1,57 +1,34 @@
 ﻿# REFLECTION.md -- Assignment 2
 
-## 1. Structural Differences (Manual vs AI)
+## 1. Structural differences
 
-### Python Notebook
-**Libraries:**  Manual = sklearn + matplotlib | AI = sklearn + matplotlib (same)
-**String formatting:**  Manual = f-strings (modern) | AI = % formatting (old style)
-**Plot style:**  Manual = basic matplotlib | AI = seaborn-enhanced
+**Python:**  Manual = sklearn + matplotlib | AI = sklearn + matplotlib (same)
+**R plotting:**  Manual = base R plot() | AI = ggplot2
+**Code style:**  Manual = f-strings | AI = %-formatting
+**Plot colors:**  Manual = blue/red | AI = steelblue/crimson
+**CLI parsing:**  Manual = sys.argv | AI = sys.argv (same)
 
-### R Notebook
-**Plotting package:**  Manual = base R plot() | AI = ggplot2
-**Syntax:**  Manual = imperative | AI = declarative (grammar of graphics)
-
-### CLI Scripts
-**Argument parsing:**  Manual = sys.argv | AI = sys.argv (same)
-**Output format:**  Manual = slope, intercept, R-squared | AI = same
-**Plot output:**  Manual = .png file | AI = same
-
-**Key takeaway:** Both versions produce identical numerical results. The main structural difference is the AI used modern R packages (ggplot2) while the manual used base R.
+Main difference: AI used ggplot2 for R; manual used base R. Everything else similar.
 
 ---
 
 ## 2. Readability
 
-- **Manual**: More straightforward. Code follows a simple linear flow. Easier for beginners to understand.
-- **AI**: More elegant visually (ggplot2, seaborn styling). But requires familiarity with additional packages.
-
-**Verdict:** Manual wins for clarity; AI wins for visual polish.
+Manual version is simpler and easier for a beginner to follow. The AI version with ggplot2 is more elegant but requires knowledge of an additional package. For a scientist doing quick exploratory analysis, the manual version wins on clarity. The AI version wins on visual polish.
 
 ---
 
-## 3. AI Bugs & Omissions
+## 3. AI bugs & omissions
 
-- Hallucinated packages: None
-- Wrong version numbers: None
-- %% instead of % in Python string formatting: Fixed
-- Notebook source formatting issue (characters as separate cells): Fixed
+The AI did not hallucinate any packages or versions. Two minor issues were found in the initial AI output and fixed during iteration:
 
-**The AI code ran correctly after minor fixes. No hallucinated packages or versions.**
+- **%% bug:** The AI used %% instead of % for Python string formatting, causing a syntax error
+- **Notebook format:** Each character of code was placed in a separate cell (display issue, fixed)
 
----
-
-## 4. CLI Behavior
-
-Both CLIs behave identically:
-- python linear_regression_python.py <filename> <x_col> <y_col>
-- Rscript linear_regression_r.R <filename> <x_col> <y_col>
-- Same argument order, same output format, same output filename convention
-- Error messages for missing arguments are reasonable in both
+No steps were skipped -- the AI notebooks and CLI scripts include all required functionality.
 
 ---
 
-## 5. Tools Used
+## 4. CLI behavior
 
-- **AI tool:** Cursor (GPT-4o / Claude)
-- **Prompts:** See ai/PROMPTS.md for 3-5 prompts used
-- **Manual:** All code typed by hand, no AI assistance
+Both CLIs work identically. They accept &lt;filename&gt; &lt;x_column&gt; &lt;y_column&gt; as arguments, output slope/intercept/R-squared, and save a PNG plot. Same argument order, same output format, same naming convention. Error messages for missing args are reasonable in both versions. No unusual invocation required.
