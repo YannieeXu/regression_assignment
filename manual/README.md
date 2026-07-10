@@ -3,10 +3,13 @@
 ## Overview
 This project demonstrates linear regression analysis using Python and R Jupyter Notebooks, along with standalone CLI scripts.
 
-## Files
-- regression_data.csv: synthetic dataset (50 rows, x vs y with noise)
-- linear_regression_python.ipynb: Python Jupyter Notebook
-- linear_regression_r.ipynb: R Jupyter Notebook
+## Dataset
+- regression_data.csv: Salary data by years of experience (30 observations)
+- Columns: YearsExperience, Salary
+
+## Files (manual/)
+- linear_regression_python.ipynb: Python Jupyter Notebook with Markdown explanations
+- linear_regression_r.ipynb: R Jupyter Notebook with Markdown explanations
 - linear_regression_python.html: HTML export (Python)
 - linear_regression_r.html: HTML export (R)
 - linear_regression_python.py: Python CLI script
@@ -15,10 +18,21 @@ This project demonstrates linear regression analysis using Python and R Jupyter 
 - linear_regression_r_output.png: output plot from R CLI
 
 ## Results
-- Slope: 2.38, Intercept: 5.13
-- R-squared: 0.9372
+- Significant positive relationship between experience and salary
+- High R-squared value
+- See notebooks for full details
 
-## Notes
-- CLI scripts and data are in the manual/ folder
-- Run from project root: python manual/linear_regression_python.py manual/regression_data.csv x y
-- R version: Rscript manual/linear_regression_r.R manual/regression_data.csv x y
+## How to Run
+
+### Notebooks
+```bash
+cd manual/
+jupyter lab
+```
+
+### CLI Scripts
+```bash
+# Run from project root
+python manual/linear_regression_python.py manual/regression_data.csv YearsExperience Salary
+Rscript manual/linear_regression_r.R manual/regression_data.csv YearsExperience Salary
+```

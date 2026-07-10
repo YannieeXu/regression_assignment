@@ -7795,7 +7795,18 @@ a.anchor-link {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<main><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=730a8ec8-3ab4-4826-a034-fc0e24073069">
+<main>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=38314556">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Linear-Regression-Analysis-(R)">Linear Regression Analysis (R)<a class="anchor-link" href="#Linear-Regression-Analysis-(R)">¶</a></h1><p>This notebook demonstrates a simple linear regression analysis using R to model Salary based on Years of Experience.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=730a8ec8-3ab4-4826-a034-fc0e24073069">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7803,7 +7814,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-r"><pre><span></span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">'regression_data.csv'</span><span class="p">)</span>
+<div class="highlight hl-r"><pre><span></span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">'manual/regression_data.csv'</span><span class="p">)</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7818,7 +7829,7 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <table class="dataframe">
-<caption>A data.frame: 6 × 2</caption>
+<caption>A data.frame: 6 脳 2</caption>
 <thead>
 <tr><th></th><th scope="col">x</th><th scope="col">y</th></tr>
 <tr><th></th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th></tr>
@@ -7844,7 +7855,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-r"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s">'Scatter Plot'</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="o">=</span><span class="s">'X'</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="o">=</span><span class="s">'Y'</span><span class="p">,</span><span class="w"> </span><span class="n">pch</span><span class="o">=</span><span class="m">19</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s">'blue'</span><span class="p">)</span>
+<div class="highlight hl-r"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">YearsExperience</span><span class="p">,</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">Salary</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s">'Salary vs Experience'</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="o">=</span><span class="s">'YearsExperience'</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="o">=</span><span class="s">'Salary'</span><span class="p">,</span><span class="w"> </span><span class="n">pch</span><span class="o">=</span><span class="m">19</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s">'blue'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7976,6 +7987,17 @@ Nk/qA9E3AAAAAElFTkSuQmCC" width="420"/>
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=979db07c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Model-Fitting">Model Fitting<a class="anchor-link" href="#Model-Fitting">¶</a></h2><p>Now we fit a linear regression model to examine the relationship between Years of Experience and Salary.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8cbac2c3-967f-4f66-b603-0a7436485d49">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7984,7 +8006,7 @@ Nk/qA9E3AAAAAElFTkSuQmCC" width="420"/>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-r"><pre><span></span><span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<div class="highlight hl-r"><pre><span></span><span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Salary</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">YearsExperience</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
 <span class="nf">summary</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8029,7 +8051,7 @@ F-statistic: 716.9 on 1 and 48 DF,  p-value: &lt; 2.2e-16
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-r"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s">'Linear Regression'</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="o">=</span><span class="s">'X'</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="o">=</span><span class="s">'Y'</span><span class="p">,</span><span class="w"> </span><span class="n">pch</span><span class="o">=</span><span class="m">19</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s">'blue'</span><span class="p">)</span>
+<div class="highlight hl-r"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">YearsExperience</span><span class="p">,</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">Salary</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s">'Salary vs Experience'</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="o">=</span><span class="s">'YearsExperience'</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="o">=</span><span class="s">'Salary'</span><span class="p">,</span><span class="w"> </span><span class="n">pch</span><span class="o">=</span><span class="m">19</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s">'blue'</span><span class="p">)</span>
 <span class="nf">abline</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span><span class="w"> </span><span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
 <span class="n">r2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
 <span class="nf">legend</span><span class="p">(</span><span class="s">'topleft'</span><span class="p">,</span><span class="w"> </span><span class="n">legend</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">'Data'</span><span class="p">,</span><span class="w"> </span><span class="s">'Regression Line'</span><span class="p">),</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">'blue'</span><span class="p">,</span><span class="w"> </span><span class="s">'red'</span><span class="p">),</span><span class="w"> </span><span class="n">pch</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">),</span><span class="w"> </span><span class="n">lty</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
@@ -8238,6 +8260,17 @@ TkSuQmCC" width="420"/>
 <div class="highlight hl-r"><pre><span></span><span class="w"> </span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9f658ecf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Results">Results<a class="anchor-link" href="#Results">¶</a></h2><p>The regression line shows a positive relationship between experience and salary. The R-squared value indicates how well the model fits the data.</p>
 </div>
 </div>
 </div>
