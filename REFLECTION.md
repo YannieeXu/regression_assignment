@@ -6,16 +6,16 @@
 **R scatter:**  Manual = base R plot() | AI = base R plot() (same)
 **R overlay:**  Manual = ggplot2 | AI = ggplot2 (same)
 **Code style:**  Manual = f-strings | AI = %-formatting
-**Plot colors:**  Manual = blue/red | AI = steelblue/crimson
+**Plot colors:**  Manual = blue/red | AI = blue/red (same)
 **CLI parsing:**  Manual = sys.argv | AI = sys.argv (same)
 
-Scatter: both use base R plot(). Overlay: both use ggplot2. AI uses steelblue colors, manual uses blue.
+Scatter: both use base R plot(). Overlay: both use ggplot2. Colors and titles are now consistent between versions.
 
 ---
 
 ## 2. Readability
 
-Manual version is simpler and easier for a beginner to follow. Both versions use base R scatter + ggplot2 overlay. The AI version uses steelblue colors and has (AI Version) in titles.
+Manual version is simpler and easier for a beginner to follow. Both versions use base R scatter + ggplot2 overlay. Both versions follow the same template structure with consistent colors and titles.
 
 ---
 
