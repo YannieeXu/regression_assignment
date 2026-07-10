@@ -1,30 +1,27 @@
-args <- commandArgs(trailingOnly=TRUE)
+args <- commandArgs(trailingOnly = TRUE)
 if (length(args) != 3) {
   stop("Usage: Rscript linear_regression_r.R <filename> <x_column> <y_column>")
 }
 
 filename <- args[1]
-x_col <- args[2]
-y_col <- args[3]
+x_column <- args[2]
+y_column <- args[3]
 
-df <- read.csv(filename)
-model <- lm(df[[y_col]] ~ df[[x_col]])
+data <- read.csv(filename)
+formula <- as.formula(paste(y_column, "~", x_column))
+model <- lm(formula, data = data)
 
-slope <- coef(model)[2]
-intercept <- coef(model)[1]
-r2 <- summary(model)$r.squared
+cat("Slope:", round(coef(model)[2], 4), "\n")
+cat("Intercept:", round(coef(model)[1], 4), "\n")  
+cat("R-squared:", round(summary(model)$r.squared, 4), "\n")
 
-cat("Slope:", round(slope, 4), "
-")
-cat("Intercept:", round(intercept, 4), "
-")
-cat("R-squared:", round(r2, 4), "
-")
+library(ggplot2)
+plot <- ggplot(data, aes_string(x = x_column, y = y_column)) +
+  geom_point(color = "red") +
+  geom_smooth(method = "lm", color = "blue") +
+  ggtitle(paste(y_column, "vs", x_column)) +
+  xlab(x_column) +
+  ylab(y_column)
 
-png("linear_regression_r_output.png", width=800, height=600)
-plot(df[[x_col]], df[[y_col]], main="Salary vs Experience",
-     xlab=x_col, ylab=y_col, pch=19, col="blue")
-abline(model, col="red", lwd=2)
-dev.off()
-cat("Saved: linear_regression_r_output.png
-")
+ggsave("linear_regression_r_output.png", plot)
+print(plot)

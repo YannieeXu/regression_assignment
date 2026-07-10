@@ -1,22 +1,27 @@
-args <- commandArgs(trailingOnly=TRUE)
+args <- commandArgs(trailingOnly = TRUE)
 if (length(args) != 3) {
   stop("Usage: Rscript linear_regression_r.R <filename> <x_col> <y_col>")
 }
 
-df <- read.csv(args[1])
-model <- lm(df[[args[3]]] ~ df[[args[2]]])
+filename <- args[1]
+x_col <- args[2]
+y_col <- args[3]
 
-slope <- coef(model)[2]
-intercept <- coef(model)[1]
-r2 <- summary(model)$r.squared
+data <- read.csv(filename)
+formula <- as.formula(paste(y_col, "~", x_col))
+model <- lm(formula, data = data)
 
-cat("Slope:", round(slope, 4), "\n")
-cat("Intercept:", round(intercept, 4), "\n")
-cat("R-squared:", round(r2, 4), "\n")
+cat("Slope:", round(coef(model)[2], 4), "\n")
+cat("Intercept:", round(coef(model)[1], 4), "\n")  
+cat("R-squared:", round(summary(model)$r.squared, 4), "\n")
 
-png("linear_regression_r_output.png", width=800, height=600)
-plot(df[[args[2]]], df[[args[3]]], main="Linear Regression (AI)",
-     xlab=args[2], ylab=args[3], pch=19, col="steelblue")
-abline(model, col="red", lwd=2)
-dev.off()
-cat("Saved: linear_regression_r_output.png\n")
+library(ggplot2)
+plot <- ggplot(data, aes_string(x = x_col, y = y_col)) +
+  geom_point(color = "red") +
+  geom_smooth(method = "lm", color = "blue") +
+  ggtitle(paste(y_col, "vs", x_col)) +
+  xlab(x_col) +
+  ylab(y_col)
+
+ggsave("linear_regression_r_output.png", plot)
+print(plot)
