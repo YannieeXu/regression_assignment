@@ -15,7 +15,8 @@ cat("Intercept:", round(intercept, 4), "\n")
 cat("R-squared:", round(r2, 4), "\n")
 
 png("linear_regression_r_output.png", width=800, height=600)
-plot(df[[args[2]]], df[[args[3]]], main="Linear Regression (AI)", pch=19, col="steelblue")
+plot(df[[args[2]]], df[[args[3]]], main="Linear Regression (AI)",
+     xlab=args[2], ylab=args[3], pch=19, col="steelblue")
 abline(model, col="red", lwd=2)
 dev.off()
 cat("Saved: linear_regression_r_output.png\n")
