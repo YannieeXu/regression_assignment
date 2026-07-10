@@ -1,32 +1,24 @@
-﻿import sys
+import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
 
 if len(sys.argv) != 4:
-    print("Usage: python linear_regression_python.py <filename> <x_col> <y_col>")
+    print("Usage: python linear_regression_python.py <filename> <x_column> <y_column>")
     sys.exit(1)
 
-df = pd.read_csv(sys.argv[1])
-X = df[[sys.argv[2]]]
-y = df[sys.argv[3]]
+filename = sys.argv[1]
+x_col = sys.argv[2]
+y_col = sys.argv[3]
 
-model = LinearRegression().fit(X, y)
-y_pred = model.predict(X)
+data = pd.read_csv(filename)
+model = LinearRegression()
+model.fit(data[[x_col]], data[[y_col]])
 
-slope = model.coef_[0]
-intercept = model.intercept_
-r2 = r2_score(y, y_pred)
-
-print("Slope: %.4f" % slope)
-print("Intercept: %.4f" % intercept)
-print("R-squared: %.4f" % r2)
-
-plt.figure(figsize=(8,6))
-plt.scatter(X, y, alpha=0.7, label="Data")
-plt.plot(X, y_pred, color="red", lw=2, label="Regression Line")
-plt.xlabel(sys.argv[2]); plt.ylabel(sys.argv[3]); plt.title(f'{sys.argv[3]} vs {sys.argv[2]}')
-plt.grid(True, alpha=0.3); plt.legend()
-plt.savefig("linear_regression_python_output.png", dpi=150)
-print("Saved: linear_regression_python_output.png")
+plt.scatter(data[[x_col]], data[[y_col]], color="red")
+plt.plot(data[[x_col]], model.predict(data[[x_col]]), color="blue")
+plt.title(f"{y_col} vs {x_col}")
+plt.xlabel(x_col)
+plt.ylabel(y_col)
+plt.savefig("linear_regression_python_output.png")
+plt.show()
