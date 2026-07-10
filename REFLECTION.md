@@ -3,18 +3,19 @@
 ## 1. Structural differences
 
 **Python:**  Manual = sklearn + matplotlib | AI = sklearn + matplotlib (same)
-**R plotting:**  Manual = base R plot() | AI = base R plot() (same)
+**R scatter:**  Manual = base R plot() | AI = base R plot() (same)
+**R overlay:**  Manual = ggplot2 | AI = ggplot2 (same)
 **Code style:**  Manual = f-strings | AI = %-formatting
 **Plot colors:**  Manual = blue/red | AI = steelblue/crimson
 **CLI parsing:**  Manual = sys.argv | AI = sys.argv (same)
 
-Main difference: Both use base R plot(). AI uses steelblue colors, manual uses blue. Titles differ slightly.
+Scatter: both use base R plot(). Overlay: both use ggplot2. AI uses steelblue colors, manual uses blue.
 
 ---
 
 ## 2. Readability
 
-Manual version is simpler and easier for a beginner to follow. Both versions use base R plot(). The AI version uses steelblue colors and has (AI Version) in titles. The manual version is more straightforward.
+Manual version is simpler and easier for a beginner to follow. Both versions use base R scatter + ggplot2 overlay. The AI version uses steelblue colors and has (AI Version) in titles.
 
 ---
 

@@ -22,9 +22,14 @@ This project demonstrates linear regression analysis using Python and R Jupyter 
 ## How to Run
 
 ### Notebooks
-Start JupyterLab from the project root:
+Start JupyterLab from the notebook folder:
 
-cd assignment2
+# For manual notebooks:
+cd manual/
+jupyter lab
+
+# For AI notebooks:
+cd ai/
 jupyter lab
 
 ### CLI Scripts
