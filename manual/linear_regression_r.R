@@ -22,7 +22,7 @@ cat("R-squared:", round(r2, 4), "
 ")
 
 png("linear_regression_r_output.png", width=800, height=600)
-plot(df[[x_col]], df[[y_col]], main="Linear Regression",
+plot(df[[x_col]], df[[y_col]], main="Salary vs Experience",
      xlab=x_col, ylab=y_col, pch=19, col="blue")
 abline(model, col="red", lwd=2)
 dev.off()
