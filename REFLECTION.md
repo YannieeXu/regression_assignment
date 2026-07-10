@@ -25,6 +25,8 @@ The AI did not hallucinate any packages or versions. Two minor issues were found
 
 - **%% bug:** The AI used %% instead of % for Python string formatting, causing a syntax error
 - **Notebook format:** Each character of code was placed in a separate cell (display issue, fixed)
+- **plt.show() in notebooks:** Jupyter renders plots automatically, making plt.show() redundant in notebooks. When executed headlessly (via nbconvert), it triggers a non-interactive backend warning. Removed from notebook cells but retained in CLI scripts.
+
 
 No steps were skipped -- the AI notebooks and CLI scripts include all required functionality.
 
