@@ -18,21 +18,23 @@ This project demonstrates linear regression analysis using Python and R Jupyter 
 - linear_regression_r_output.png: output plot from R CLI
 
 ## Results
-- Significant positive relationship between experience and salary
-- High R-squared value
-- See notebooks for full details
+- Significant positive relationship between experience and salary (R-squared: 0.7852)
+- Slope: 8285.29, Intercept: 29203.52
 
 ## How to Run
 
-### Notebooks
+### Jupyter Notebooks
+Start JupyterLab from the project root and open notebooks in the manual/ or ai/ folder:
 ```bash
-cd manual/
+cd C:/Users/huangjinjie/assignment2
 jupyter lab
 ```
 
 ### CLI Scripts
 ```bash
-# Run from project root
+# Python
 python manual/linear_regression_python.py manual/regression_data.csv YearsExperience Salary
+
+# R
 Rscript manual/linear_regression_r.R manual/regression_data.csv YearsExperience Salary
 ```
