@@ -1,26 +1,17 @@
-REFLECTION -- Assignment 2
+REFLECTION -- Assignment 3
 
-1. Structural differences
-Python:  Manual = sklearn + matplotlib | AI = sklearn + matplotlib (same)
-R scatter:  Manual = base R plot() | AI = base R plot() (same)
-R overlay:  Manual = ggplot2 | AI = ggplot2 (same)
-Code style:  Manual = f-strings | AI = %-formatting
-Plot colors:  Manual = blue/red | AI = blue/red (same)
-CLI parsing:  Manual = sys.argv | AI = sys.argv (same)
+1. Commit messages: manual vs AI
 
-Scatter: both use base R plot(). Overlay: both use ggplot2. Colors and titles are now consistent between versions.
+My hand-written commit messages are short and functional (e.g., "Add ai/ file listing to README.md"). The AI version would likely produce more descriptive messages with context, like "feat: add regression diagnostics with annotated plots for Python and R". For a project I would inherit a year from now, I prefer the AI style -- descriptive messages make it easier to understand the history without reading the diff.
 
-2. Readability
-Manual version is simpler and easier for a beginner to follow. Both versions use base R scatter + ggplot2 overlay. Both versions follow the same template structure with consistent colors and titles.
+2. AI code review
 
-3. AI bugs & omissions
-The AI did not hallucinate any packages or versions. Several minor issues were found in the initial AI output and fixed during iteration:
+The AI code review caught a few real issues: it noted that the Python and R scripts could benefit from better error handling (try/except for missing files), and that plot annotation positioning should be consistent between the two implementations. It did not flag any false positives. The review was accurate but shallow -- it caught surface-level style issues rather than deep logic errors.
 
-- %% bug: The AI used %% instead of % for Python string formatting, causing a syntax error
-- Notebook format: Each character of code was placed in a separate cell (display issue, fixed)
-- plt.show() in notebooks: Jupyter renders plots automatically, making plt.show() redundant in notebooks. When executed headlessly (via nbconvert), it triggers a non-interactive backend warning. Removed from notebook cells but retained in CLI scripts.
+3. README comparison: manual vs README_AI.md
 
-No steps were skipped -- the AI notebooks and CLI scripts include all required functionality.
+The manual README is more concise and includes exact output values. The AI-generated README is better structured with clearer setup instructions. For a new contributor, the AI version is more useful because it explains the diagnostics in plain terms and provides cleaner usage examples.
 
-4. CLI behavior
-Both CLIs accept the same arguments (<filename> <x_column> <y_column>), save a PNG plot, and have the same argument ordering and error messages. The R CLI additionally prints slope/intercept/R-squared to the terminal via cat() statements, while the Python CLI outputs no text (per the assignment template). No unusual invocation required.
+4. Habit to carry forward
+
+Write more descriptive commit messages. The AI approach of explaining both the "what" and the "why" in commit messages makes the project history much more readable.
