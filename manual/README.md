@@ -1,46 +1,24 @@
-# Linear Regression Analysis
+# Linear Regression with Diagnostics (Manual Version)
 
 ## Overview
-This project demonstrates linear regression analysis using Python and R Jupyter Notebooks, along with standalone CLI scripts.
+This project enhances the Assignment 2 regression analysis with diagnostic metrics (correlation coefficient, MSE) and annotated plots.
 
-## Dataset
-- regression_data.csv: Salary data by years of experience (10 observations)
-- Columns: YearsExperience, Salary
+## Files
+- linear_model_python.ipynb / linear_model_r.ipynb: Jupyter Notebooks with Markdown explanations
+- linear_model.py / linear_model.R: CLI scripts
+- regression_plot_python.png / regression_plot_r.png: Output plots with annotations
+- environment.yml / setupenv.sh: Environment setup files
 
-## Files (manual/)
-- linear_regression_python.ipynb: Python Jupyter Notebook with Markdown explanations
-- linear_regression_r.ipynb: R Jupyter Notebook with Markdown explanations
-- linear_regression_python.html / linear_regression_r.html: HTML exports
-- linear_regression_python.py: Python CLI script
-- linear_regression_r.R: R CLI script
-- linear_regression_python_output.png / linear_regression_r_output.png: output plots
-- regression_data.csv: source dataset
-
-## Files (ai/)
-- linear_regression_python.ipynb / linear_regression_r.ipynb: AI-generated notebooks
-- linear_regression_python.html / linear_regression_r.html: HTML exports
-- linear_regression_python.py: AI-generated Python CLI script
-- linear_regression_r.R: AI-generated R CLI script
-- linear_regression_python_output.png / linear_regression_r_output.png: output plots
-- PROMPTS.md: record of prompts used with the AI tool
-
-## Results
-- R-squared: 0.7852
+## Required Outputs
 - Slope: 8285.29, Intercept: 29203.52
+- Correlation coefficient (r): 0.8861
+- MSE: 17523844.08
 
 ## How to Run
 
 ### Notebooks
-Start JupyterLab from the notebook folder:
-
-# For manual notebooks:
-cd manual/
-jupyter lab
-
-# For AI notebooks:
-cd ai/
 jupyter lab
 
 ### CLI Scripts
-python manual/linear_regression_python.py manual/regression_data.csv YearsExperience Salary
-Rscript manual/linear_regression_r.R manual/regression_data.csv YearsExperience Salary
+python linear_model.py regression_data.csv YearsExperience Salary
+Rscript linear_model.R regression_data.csv YearsExperience Salary
