@@ -1,13 +1,13 @@
-# Prompts Used (AI Version)
+# Prompt Log for AI-Generated Files (Assignment 3)
 
-## Prompt 1: Python Notebook
-"Create a Python Jupyter Notebook for linear regression that reads regression_data.csv, creates a scatter plot, fits a model, shows the regression line, and evaluates the model. Use pandas, matplotlib, and scikit-learn."
+## Prompt 1: Python Script and Notebook
+Generate a Python CLI script and Jupyter notebook for linear regression with diagnostics.
 
-## Prompt 2: R Notebook
-"Create an R Jupyter Notebook for linear regression that reads regression_data.csv, creates a scatter plot, fits a linear model with lm(), overlays the regression line, and displays R-squared."
+## Prompt 2: R Script and Notebook
+Generate an R CLI script and Jupyter notebook for linear regression with diagnostics.
 
-## Prompt 3: Python CLI
-"Convert the Python notebook into a CLI script linear_regression_python.py that accepts <filename> <x_column> <y_column> as command-line arguments and saves the regression plot as linear_regression_python_output.png."
+## Prompt 3: Code Review
+Review the assignment3 branch diff from the main branch. Check for correct statistics and error handling.
 
-## Prompt 4: R CLI
-"Create an R CLI script linear_regression_r.R that takes <filename> <x_column> <y_column> as arguments and produces a PNG plot named linear_regression_r_output.png."
+## Prompt 4: README Generation
+Generate a README for a regression analysis project with diagnostics and annotated plots.
