@@ -12,7 +12,11 @@ filename = sys.argv[1]
 x_col = sys.argv[2]
 y_col = sys.argv[3]
 
-data = pd.read_csv(filename)
+try:
+    data = pd.read_csv(filename)
+except FileNotFoundError:
+    print(f"Error: File '{filename}' not found.")
+    sys.exit(1)
 x = data[x_col]
 y = data[y_col]
 
